@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="navLog.jpg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
+    <title>My OTT</title>
+    <style>
+        *{
+            margin: 0px;
+            font-family: 'Almendra',serif;
+            font-family: 'Charm', cursive;
+            font-family: 'DM Sans', sans-serif;
+            font-family: 'Inter', sans-serif;
+            font-family: 'Jost', sans-serif;
+        }
+        body{
+            background-color: black;
+        }
+        nav{
+            height: 100px;
+            width: 100%;
+            /* background-color: rgb(18, 28, 36); */
+            background: rgb(53, 49, 49,0.4);
+            backdrop-filter: blur(8px);
+            /* filter: blur(1px); */
+            display: flex;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-logo img{
+            height:92px;
+            width: 180px;
+            margin:4px 10px 7px 0px;
+
+        }
+        nav .nav-items{
+
+            position: absolute;
+            right: 20px;
+
+        }
+        .nav-items a{
+            text-decoration: none;
+            font-size: 20px;
+            padding: 15px 5px;
+            color: rgb(159, 175, 98);
+            /* font-family: 'Times New Roman', Times, serif; */
+            /* font-weight: 400; */
+            /* display: inline; */
+        }
+        .nav-items:hover a{
+            filter: blur(2px);
+        }
+        .nav-items a:hover{
+            color: rgb(82, 120, 234);
+            filter: blur(0px);
+
+        }
+        .carousel-inner img{
+            height: 492px;
+            width: 80%;
+            margin: 10px 0px 0px 150px;
+        }
+        /* .carousel-inner{
+            margin: 10px 0px 0px 150px;
+        } */
+        .carousel-control-prev-icon {
+            position: relative;
+            left: 100px;
+        }
+        .carousel-control-next-icon {
+            position: relative;
+            right: 100px;
+        }
+        h2{
+            color: grey;
+            display: inline;
+        }
+        h2:hover{
+             color: whitesmoke; 
+        }
+        .frequent-images{
+            display: flex;
+            flex-wrap: wrap;
+            /* backdrop-filter: blur(8px); */
+            justify-content: space-around;
+        }
+        .frequent-images img{
+            margin: 5px;
+            height:250px ;
+            width: 300px;
+        }
+        .frequent-images img:hover{
+            transform: translate();
+            scale: 1.2;
+            filter: drop-shadow(10px);
+            transition: all .5s ease-in-out;
+            border-radius: 10px;
+            /* backdrop-filter: blur(8px); */
+        }   
+        #carouselExampleAutoplaying{
+            margin-top: 80px;
+        }
+        /* h2{
+            color: grey;
+            display: inline;
+        }
+        h2:hover{
+            color: whitesmoke;
+        } */
+        .recent-image{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .recent-image img{
+            margin:5px;
+            height: 250px;
+            width: 300px;
+        }
+        .recent-image img:hover{
+            transform: translate();
+            scale:1.2;
+            filter: drop-shadow(10px);
+            transition: all .5s ease-in-out;
+            border-radius: 10px;
+        }
+         h2{
+            color: grey;
+            display: inline;
+        }
+        h2:hover{
+            color: whitesmoke;
+        } 
+        .toprate-image{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .toprate-image img{
+            margin:5px;
+            height: 250px;
+            width: 300px;
+        }
+
+        .toprate-image img:hover{
+            transform: translate();
+            scale:1.2;
+            filter: drop-shadow(10px);
+            transition: all .5s ease-in-out;
+            border-radius: 10px;
+        }
+         h2{
+            color: grey;
+            display: inline;
+        }
+        h2:hover{
+            color: whitesmoke;
+        } 
+
+        .fav-image{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .empty{
+            height: 80%;
+        }
+
+        .fav-image img{
+            margin:5px;
+            height: 250px;
+            width: 300px;
+        }
+
+        .fav-image img:hover{
+            transform: translate();
+            scale:1.2;
+            filter: drop-shadow(10px);
+            transition: all .5s ease-in-out;
+            border-radius: 10px;
+        }
+
+        .outer-about{
+            display: flex;
+            background-color: black;
+        }
+
+        .outer-about .inner-about{
+            height: 230px;
+            width: 300px;
+            color: grey;
+            background-color:rgb(7, 7, 9);
+            margin: 5px 0px 10px 10px;
+        }
+
+
+        .inner-about .dabba{
+            display: flex;
+        }
+
+        .the-end{
+            position: absolute;
+            right: 10px;
+            top: 5000px;
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-logo">
+            <img src="mainicon.jpg" alt="">
+        </div>
+        <div class="nav-items">
+            <a href="#carouselExampleAutoplaying">Home</a>
+            <a href="#frq">Frequently Watched</a>
+            <a href="#recent">Recent</a>
+            <a href="#toprate">Top Rated</a>
+            <a href="#fav">Favourite</a>
+            <a href="#about">About</a>
+            <a href="">SignUp/SignIn</a>
+        </div>
+
+    </nav>
+    <!-- home section -->
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" data-bs-interval="1000">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="at.webp" class="d-block " alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="lk.webp" class="d-block " alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="cl.jpg" class="d-block " alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div><br><br>
+
+    <!-- Home section end -->
+
+    <!-- Frequent section -->
+    <div class="frequent" id="frq"><br><br><br><br><br>
+        <div class="empty"></div>
+        <h2>Frequently Watched</h2><br><br>
+        <div class="frequent-images">
+            <img src="pic1.webp" alt="">
+            <img src="pic2.webp" alt="">
+            <img src="pic3.webp" alt="">
+            <img src="pic4.webp" alt="">
+            <img src="pic5.webp" alt="">
+            <img src="pic6.webp" alt="">
+            <img src="pic7.webp" alt="">
+            <img src="pic8.webp" alt="">
+            <img src="pic9.webp" alt="">
+            <img src="pic10.webp" alt="">
+            <img src="pic11.webp" alt="">
+            <img src="pic12.webp" alt="">
+        </div>
+    </div><br><br>
+    <!-- Frequent watched end -->
+
+    <!-- Recent start -->
+    <div class="recent" id="recent"><br><br><br><br><br>
+        <div class="empty"></div>
+        <h2>Recent</h2><br><br>
+        <div class="recent-image">
+            <img src="r1.webp" alt="">
+            <img src="r2.webp" alt="">
+            <img src="r3.webp" alt="">
+            <img src="r4.webp" alt="">
+            <img src="r5.webp" alt="">
+            <img src="r6.webp" alt="">
+            <img src="r7.webp" alt="">
+            <img src="r8.webp" alt="">
+            <img src="r9.webp" alt="">
+            <img src="r10.webp" alt="">
+            <img src="r11.webp" alt="">
+            <img src="r12.webp" alt="">
+        </div>
+    </div><br><br>
+    <!-- Recent end -->
+
+    <!-- Top rated start -->
+    <div class="toprate" id="toprate"><br><br><br><br><br>
+        <div class="empty"></div>
+        <h2>Top Rated</h2><br><br>
+        <div class="toprate-image">
+          <img src="tr1.webp" alt="">
+          <img src="tr2.webp" alt="">
+          <img src="t3.webp" alt="">
+          <img src="tr4.webp" alt="">
+          <img src="tr5.webp" alt="">
+          <img src="tr6.webp" alt="">
+          <img src="tr7.webp" alt="">
+          <img src="tr8.webp" alt="">
+          <img src="tr9.webp" alt="">
+          <img src="tr10.webp" alt="">
+          <img src="tr11.webp" alt="">
+          <img src="tr12.webp" alt="">
+        </div>
+      </div><br><br>
+
+      <!-- Top rated end here -->
+
+      <!-- Favorites start -->
+      <div class="fav" id="fav"><br><br><br><br><br>
+        <div class="empty"></div>
+        <h2>Favorites</h2><br><br>
+        <div class="fav-image">
+          <img src="fv1.webp" alt="">
+          <img src="fvr2.webp" alt="">
+          <img src="fv3.webp" alt="">
+          <img src="fv4.webp" alt="">
+          <img src="fv5.webp" alt="">
+          <img src="fv6.webp" alt="">
+          <img src="fv7.webp" alt="">
+          <img src="fv8.webp" alt="">
+          <img src="fv9.webp" alt="">
+          <img src="fv10.webp" alt="">
+          <img src="fv11.webp" alt="">
+          <img src="fv12.webp" alt="">
+    </div>
+    </div><br><br><br>
+      <!-- Favorites end -->
+
+      <!-- About start -->
+    <div class="outer-about" id="about">
+      <div class="inner-about">
+        <h4>Company</h4>
+        <p>About Us</p>
+        <p>Careers</p>
+      </div>
+    <div class="inner-about">
+      <h4>View Website in</h4>
+      <div class="dabba">
+        <img src="tick.png" alt="" height="35px">
+      <p class="eng">English</p>
+      </div>
+      
+    </div>
+    <div class="inner-about">
+      <h4>Need Help?</h4>
+      <p>Visit Help Center</p>
+      <p>Share Feedback</p>
+    </div>
+    <div class="inner-about">
+      <h4>Connect With Us</h4>
+      <img src="fcbk.png" alt="" height="35px" width="40px">
+      <img src="twty.png" alt="" height="35px" width="35px">
+    </div>
+  </div>
+  <!-- About end here -->
+  
+  <!-- Footer start -->
+  <footer>
+    <p>&copy 2023 STAR. All Rights Reserved.br <br> Terms Of Use &nbsp; Privacy Policy &nbsp; FAQ </p>
+    <div class="the-end">
+      <img src="gplay.png" alt="" height="50px" width="100px">&nbsp;&nbsp;
+      <img src="ios.jpg" alt="" height="50px" width="100px"> 
+    </div> 
+   </footer>
+
+</body>
+</html>
